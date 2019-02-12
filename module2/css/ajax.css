@@ -13,7 +13,10 @@ h1 {
 section {
 	border: 1px solid black;
 	background-color: grey;
-    margin: 10px;
+  margin: 10px;
+  height: 100px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 p {
@@ -23,27 +26,7 @@ p {
 	width: 95%;
 }
 
-.chicken {
-    background: pink;
-    float: right;
-    border: 1px black solid;
-    padding: 2px 20px 2px 20px;
-}
 
-.beef{
-    color: white;
-    background: red;
-    float: right;
-    border: 1px black solid;
-    padding: 2px 20px 2px 20px;
-}
-
-.sushi{
-    background: tan;
-    float: right;
-    border: 1px black solid;
-    padding: 2px 20px 2px 20px;
-}
 
 @media (min-width: 992px) {
 
@@ -85,6 +68,45 @@ p {
   }
   .col-lg-12 {
     width: 100%;
+  }
+
+  .titleSm {
+    font-size: 0px;
+  }
+  .titleLg {
+    font-size: 32px;
+    text-align:center;
+  }
+
+  .chickenLg {
+      background: pink;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .chickenSm {
+      font-size: 0px;
+  }
+
+  .beefLg {
+      color: white;
+      background: red;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .beefSm {
+    font-size: 0px;
+  }
+
+  .sushiLg {
+      background: tan;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .sushiSm {
+    font-size: 0px;
   }
 
 }
@@ -129,6 +151,45 @@ p {
   .col-md-12 {
     width: 100%;
   }
+
+  .titleSm {
+    font-size: 0px;
+  }
+  .titleMed {
+    font-size: 32px;
+    text-align:center;
+  }
+  .chickenLg {
+      background: pink;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .chickenSm {
+      font-size: 0px;
+  }
+
+  .beefLg {
+      color: white;
+      background: red;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .beefSm {
+    font-size: 0px;
+  }
+
+  .sushiLg {
+      background: tan;
+      float: right;
+      border: 1px black solid;
+      padding: 2px 20px 2px 20px;
+  }
+  .sushiSm {
+    font-size: 0px;
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -171,6 +232,49 @@ p {
   .col-sm-12 {
     width: 100%;
   }
+
+  .titleLg {
+    font-size: 0px;
+    text-align: left;
+  }
+  .titleSm {
+    font-size: 8px;
+    text-align: left;
+    font-family: "Courier", Times, serif;
+    margin: 10px;
+  }
+  .chickenLg {
+    font-size: 0px;
+
+  }
+  .chickenSm {
+    background: pink;
+    text-align: center;
+    border: 1px black solid;
+    padding: 2px 20px 2px 20px;      
+  }
+
+  .beefLg {
+    font-size: 0px;
+  }
+  .beefSm {
+    color: white;
+    background: red;
+    text-align: center;
+    border: 1px black solid;
+    padding: 2px 20px 2px 20px;
+  }
+
+  .sushiLg {
+    font-size: 0px;
+  }
+  .sushiSm {
+    background: tan;
+    text-align: center;
+    border: 1px black solid;
+    padding: 2px 20px 2px 20px;
+  }
+
 }
 
 

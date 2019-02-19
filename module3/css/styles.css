@@ -1,0 +1,45 @@
+
+
+/** HEADER **/
+#header-nav {
+  background-color: #000000;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-brand {
+  padding-top: 25px;
+}
+
+.navbar-brand h1 {
+  font-family: 'Lora', serif;
+  color: #557c3e;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+
+.section-color {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  font-family: 'Lora', serif;
+}
+
+.menu-prop {
+    border: white solid;
+    border-width: 0px 0px 1px 0px;
+}
+
+a { 
+  color: white; 
+} 
+
+a:visited { 
+  color: white; 
+} 

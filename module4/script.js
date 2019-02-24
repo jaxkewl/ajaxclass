@@ -86,4 +86,31 @@ function simpleFunction (arg1) {
   const map2 = names.map(x => simpleFunction(x));
   console.log(map2);
 
+
+  var third = {hello: [], bye: []};
+  hcntr = 0;
+  bcntr = 0;
+  function reducer (accumulator, name) {
+    // console.log("function " , name);
+    if (name.charAt(0).toLowerCase() === 'j') {
+      third.hello[hcntr] = byeSpeaker.speakSimple(name);
+      // console.log(third.hello[hcntr]);
+      hcntr++;
+      return accumulator + byeSpeaker.speakSimple(name);
+    } else {
+      third.bye[bcntr] = helloSpeaker.speakSimple(name);
+      // console.log(third.bye[bcntr])
+      bcntr++;
+      return accumulator + helloSpeaker.speakSimple(name);
+    }
+
+  }
+  console.log("");
+  names.reduce(reducer);
+  //console.log(names.reduce(reducer));
+  console.log(third.hello);
+  console.log(third.bye);
+
+
+
 })();

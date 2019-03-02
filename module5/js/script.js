@@ -185,14 +185,14 @@ function buildAndShowAboutHtml(aboutHtml) {
   var idx = 1;
 
   //load the blank stars
-  for (idx = 1; idx <= numberOfStars ; idx++) {
+  for (idx = 1; idx <= numberOfStars; ++idx) {
     var aboutClassToReplace = aboutClass + idx;
     aboutHtml = 
       insertProperty(aboutHtml, aboutClassToReplace, "fas fa-star")
   }
 
   //load the filled out stars
-  for (idx = 1; idx <= totalStars; idx++) {
+  for (idx = 1; idx <= totalStars; ++idx) {
     var aboutClassToReplace = aboutClass + idx;
     aboutHtml = 
       insertProperty(aboutHtml, aboutClassToReplace, "far fa-star");

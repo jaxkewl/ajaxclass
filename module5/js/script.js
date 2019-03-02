@@ -14,10 +14,13 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 var dc = {};
 
 var homeHtmlUrl = "snippets/home-snippet.html";
+var aboutHtmUrl = "snippets/about-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
 var categoriesTitleHtml = "snippets/categories-title-snippet.html";
 var categoryHtml = "snippets/category-snippet.html";
+
+
 var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
@@ -119,7 +122,7 @@ function buildAndShowHomeHTML (categories) {
       // var homeHtmlToInsertIntoMainPage = ....
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", "'"
         + chosenCategoryShortName.short_name +"'")
-      console.log("homeHtmlToInsertIntoMainPage ", homeHtmlToInsertIntoMainPage);
+      //console.log("homeHtmlToInsertIntoMainPage ", homeHtmlToInsertIntoMainPage);
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
@@ -150,6 +153,15 @@ dc.loadMenuCategories = function () {
     buildAndShowCategoriesHTML);
 };
 
+// Load the about page
+dc.loadAboutPage = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    aboutHtmUrl,
+    function (aboutHtml) {
+      buildAndShowAboutHtml(aboutHtml);
+    }, false);
+};
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
@@ -159,6 +171,35 @@ dc.loadMenuItems = function (categoryShort) {
     menuItemsUrl + categoryShort,
     buildAndShowMenuItemsHTML);
 };
+
+function getRandomNum(max) {
+  var num = Math.floor(Math.random() * Math.floor(max));
+  return num + 1
+}
+
+function buildAndShowAboutHtml(aboutHtml) {
+
+  var totalStars = 5;
+  var numberOfStars = getRandomNum(totalStars);
+  var aboutClass = "class-";
+  var idx = 1;
+
+  //load the blank stars
+  for (idx = 1; idx <= numberOfStars ; idx++) {
+    var aboutClassToReplace = aboutClass + idx;
+    aboutHtml = 
+      insertProperty(aboutHtml, aboutClassToReplace, "fas fa-star")
+  }
+
+  //load the filled out stars
+  for (idx = 1; idx <= totalStars; idx++) {
+    var aboutClassToReplace = aboutClass + idx;
+    aboutHtml = 
+      insertProperty(aboutHtml, aboutClassToReplace, "far fa-star");
+  }
+
+  insertHtml("#main-content", aboutHtml);
+}
 
 
 // Builds HTML for the categories page based on the data
@@ -241,6 +282,7 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
     },
     false);
 }
+
 
 
 // Using category and menu items data and snippets html

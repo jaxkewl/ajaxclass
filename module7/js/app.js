@@ -14,7 +14,7 @@
     this.toBuyItems = ShoppingListCheckoffService.getToBuyItems();
 
     this.buyAnItem = function(index) {
-      ShoppingListCheckoffService.buyAnItem(index)
+      ShoppingListCheckoffService.buyAnItem(index);
     }
   }
 
@@ -59,9 +59,9 @@
     }
 
     this.buyAnItem = function(toBuyItemIndex) {
-      alreadyBoughtItems.push(toBuyItems[toBuyItemIndex])
-      var numberToDelete = 1
-      toBuyItems.splice(toBuyItemIndex, numberToDelete)
+      alreadyBoughtItems.push(toBuyItems[toBuyItemIndex]);
+      var numberToDelete = 1;
+      toBuyItems.splice(toBuyItemIndex, numberToDelete);
     }
 
     this.getToBuyItems = function () {
@@ -75,11 +75,13 @@
   }
 
   function CustomPriceFilterFactory() {
-    return function (input) {
-      var totalPrice = input.quantity * input.pricePer
-      var returnPriceString = "$$$" + String(totalPrice)
-      return returnPriceString
+
+    return function (input, decimal) {
+      var totalPrice = input.quantity * input.pricePer;
+      var returnString = "$$$" + String(totalPrice.toFixed(2));
+      return returnString;
     };
+
   }
 
 })();

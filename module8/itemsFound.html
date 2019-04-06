@@ -1,0 +1,13 @@
+<div>
+  <ul>
+    <li ng-repeat="item in ItemsFound.found">
+      <div class="narrow-button">
+        <button ng-click="ItemsFound.onRemove({index: $index});">Don't Want this one!</button>
+      </div>
+      <div class="border">
+        <div><b>Item:</b> {{item.name}}</div>
+        <div><b>Description:</b> {{item.description}}</div>
+      </div>
+    </li>
+  </ul>
+</div>

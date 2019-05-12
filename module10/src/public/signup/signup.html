@@ -1,0 +1,108 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
+  <div class="text-center">
+    <div>Sign up to receive a newsletter!</div>
+    <br>
+    <div>
+      <form name="signupForm" novalidate>
+
+        <br>First Name:<br>
+        <input
+        class="input_form_text"
+        name="firstname"
+        ng-model="signupCtrl.firstname"
+        type="text"
+        required
+        ng-minlength="2"
+        >
+        <div class="error" ng-show="signupForm.firstname.$error.required && signupForm.firstname.$touched">First Name is required.</div>
+        <div class="error" ng-show="signupForm.firstname.$error.minlength && signupForm.firstname.$touched">First Name has min-length of 2.</div>
+
+
+
+
+        <br>Last Name:<br>
+        <input
+        class="input_form_text"
+        name="lastname"
+        ng-model="signupCtrl.lastname"
+        type="text"
+        required
+        ng-minlength="2"
+        >
+        <div class="error" ng-show="signupForm.lastname.$error.required && signupForm.lastname$touched">Last Name is required.</div>
+        <div class="error" ng-show="signupForm.lastname.$error.minlength && signupForm.lastname.$touched">Last Name has min-length of 2.</div>
+
+
+
+
+        <br>Email:<br>
+        <input
+        class="input_form_text"
+        name="emailInput"
+        ng-model="signupCtrl.email"
+        type="email"
+        required>
+        <div class="error" ng-show="signupForm.emailInput.$error.required && signupForm.emailInput.$touched">Email is required.</div>
+        <div class="error" ng-show="signupForm.emailInput.$error.email && signupForm.emailInput.$touched">Email invalid.</div>
+
+
+
+
+        <br>Phone#:<br>
+        <input
+        class="input_form_text"
+        name="phoneInput"
+        ng-model="signupCtrl.phone"
+        type="tel"
+
+        required>
+        <div class="error" ng-show="signupForm.phoneInput.$error.required && signupForm.phoneInput.$touched">Phone number is required.</div>
+
+
+
+
+        <br>Favorite Item:<br>
+        <input
+        class="input_form_text"
+        name="favInput"
+        ng-model="signupCtrl.favItem"
+        type="text"
+        required
+        ng-minlength="2"
+        ng-maxlength="2"><br>
+        <div class="error" ng-show="signupForm.favInput.$error.required && signupForm.favInput.$touched">Fav Item is required.</div>
+        <div class="error" ng-show="signupForm.favInput.$error.minlength && signupForm.favInput.$touched">Fav Item has min-length of 2.</div>
+        <div class="error" ng-show="signupForm.favInput.$error.maxlength && signupForm.favInput.$touched">Fav Item has max-length of 2.</div>
+
+
+
+        <div>
+  				<span ng-if="signupCtrl.registered == true">
+  					Your information has been saved.
+  				</span>
+                  <span ng-if="signupCtrl.registered == false">
+  					{{signupCtrl.displayMessage}}
+  				</span>
+  			</div>
+
+
+
+
+        <br><br>
+        <button
+        class="input_form_text"
+        type="button"
+        ng-click="signupCtrl.send();"
+        ng-disabled="signupForm.firstnameInput.$invalid ||
+          signupForm.lastnameInput.$invalid ||
+          signupForm.emailInput.$invalid ||
+          signupForm.phoneInput.$invalid ||
+          signupForm.favInput.$invalid">SUBMIT
+    </button>
+
+      </form>
+
+
+    </div>
+  </div>

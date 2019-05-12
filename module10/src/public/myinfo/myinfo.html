@@ -1,0 +1,24 @@
+<div id="myinfo-content" class="container">
+	<div class="row">
+
+	<div ng-if="myInfoCtrl.registered == true">
+			<div>Hello {{myInfoCtrl.firstname}} {{myInfoCtrl.lastname}} </div>
+			<div>email: {{myInfoCtrl.email}} </div>
+			<div>phone#: {{myInfoCtrl.phone}} </div>
+			<div>favorite: {{myInfoCtrl.favItem}}</div>
+			<br>
+			<img width="100" height="100"
+				ng-src="https://kward.herokuapp.com/images/{{myInfoCtrl.favItem}}.jpg"
+				alt="{{$myInfoCtrl.favItem}}">
+			<br>
+				title: {{myInfoCtrl.title}}
+			<br>
+				description: {{myInfoCtrl.description}}
+	</div>
+
+	<div ng-if="myInfoCtrl.registered == false">
+	    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+	</div>
+
+	</div>
+</div>
